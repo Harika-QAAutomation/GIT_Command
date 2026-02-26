@@ -1,0 +1,165 @@
+
+
+Quick Tips:
+
+Always increment version for new build
+
+For feature and regression builds ONLY increment last quadrant
+
+Release / Patch version will always have zero in last quadrant X.X.X.0
+
+Major change or breaking change will always have first quadrant incremented X+1.0.0.0
+
+For bug fixes increment third quadrant X.X.X+1.0
+
+For enhancement increment second quadrant X.X+1.0.0
+
+ 
+
+New Versioning:
+
+All components except NCM and Credit Connector will follow semantic versioning with additional 4th place for dev builds which would always be 0 for release builds.
+
+[Major].[Minor].[Patch].[Dev]
+
+MAJOR version when you make incompatible API changes.
+
+MINOR version when you add functionality in a backward compatible manner.
+
+PATCH version when you make backward compatible bug fixes.
+
+DEV - Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
+
+Semantic Versioning
+
+It will be updated for regression, dev, feature builds
+
+Release Version: 7.[QM5].[Patch]
+
+NCM will try to follow release version 7.[QM5].[Patch].[Dev]
+
+Credit Connector will follow 1.[Major].[Minor].[Dev]
+
+NCM, CC will retain the 7 & 1 to avoid re-certification for PCI DSS compliance.
+
+Electron and Kiosk only have three places so slight change:
+
+Major Change will increment first place X.0.0
+
+Minor / patch / bug fixes will increment second place X.X.0
+
+All feature / dev builds will have 3rd place updated from last release
+
+ 
+
+Merge Flow:
+
+Major Release: Feature Branch → Epic Branch → Development Branch → Master Branch
+
+Patch Release: Feature Branch → Patch Release Branch
+
+Post patch release, changes (cherry pick) should be merged into all Epic / Development branches.
+
+ 
+
+Versioning:
+
+Scheme:  [Revamp].[Major].[Patch].[Dev]
+
+Major Release 7.7.11
+
+NCM: 7.8.0.0001
+
+Usherman Server: 3.4.0.0
+
+Usherman Web: 2.4.0.0
+
+Bundle: 1.80.0.0
+
+Patch Release 7.7.11.1
+
+NCM: 7.8.1.0001
+
+Usherman Server: 3.4.1.0
+
+Usherman Web: 2.4.1.0
+
+Bundle: 1.80.1.0
+
+Dev / feature / regression builds for major / minor would always increment 4th place
+
+NCM: 7.8.0.0011
+
+Usherman Server: 3.4.0.9
+
+Usherman Web: 2.4.0.8
+
+Bundle: 1.80.0.5
+
+Revamp: 1st place will only be updated for rewriting, revamping, overhaul change.
+
+Major: 2nd place will be updated for major releases
+
+Patch: 3rd place will be updated for patch releases
+
+Dev: 4th place will be updated for regression, dev, feature builds
+
+Example:
+
+Always increment build version for any new build.
+
+NOTE: With Embarcadero / Delphi gone, need to verify and confirm if we still need to avoid 7, 8, 9 in 4th place for NCM builds versions.
+
+ 
+
+Best Practices: 
+
+A check-in is similar to a database transaction described by its ACID properties:
+
+Atomic.
+
+Consistent.
+
+Isolated.
+
+Durable.
+
+Commit all files that belong to a task in a single operation to keep the project consistent at all times.
+
+Each commit should have a single purpose. For example, fixing a bug or adding a new feature. If a single change makes multiple independent changes to your project, it can become difficult to read and to review. Backing out one of these changes then becomes more complex and unnecessarily time-consuming.
+
+Write meaningful commit messages.
+
+Branch name and comments should always have story number associated with the change.
+
+Branch name example: AMCI-11011_CamelCaseSmallDescription
+
+Epic Branch name example: AMCI-11246_ZoneGatedSeatingEpic / Epic_AMCI-11246_ZoneGatedSeating
+
+Comment: Story Number SPACE Description of explain what and why you have done something
+
+AMCI-11011 Why the changes were done.
+
+Don’t Break Builds
+
+Another version control best practice is to avoid breaking builds by doing complete commits.
+
+Provide test cases and at least stubs for new APIs. This ensures every commit is usable by any other member in the team without breaking their build.
+
+A complete commit is easier to propagate between branches. An incomplete commit of an API, for example, might build locally in your work area and pass all tests. But it could break in another team member’s work area.
+
+Do Reviews Before Committing to a Shared Repository
+
+We would be working on enforcing code review before any code merge
+
+NEVER merge directly into Epic / Development / Patch release branches. Create feature branches and use them to merge changes. 
+
+NEVER reuse the patch release branch for subsequent patch releases. ALWAYS create new patch release branch.
+
+Add TAGS once release build is ready for easier release management specially for patch releases.
+
+Delete branches as soon as associated story is marked done and code changes has been merged into Epic / Development branch.
+
+Always create a new merge commit and check "Do not commit" so that merge changes can be verified before pushing the changes.
+
+          
