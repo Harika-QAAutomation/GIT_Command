@@ -1,0 +1,65 @@
+Severity
+
+1 - A problem that critically impacts AMC’s ability to do business, either circuit-wide or at a specific theatre.  Examples include:
+
+POS Server Down
+
+Issues involving majority of circuit
+
+Unable to perform sales on either concession or box transactions
+
+50%+ of Point of Sale Stations and/or Kiosks down
+
+50%+ of ticket printers down
+
+Unable to perform close day
+
+Unable to perform open day
+
+Unable to process loyalty transaction
+
+Unable to authorize credit cards
+
+Unable to settle credit batches
+
+Issues with KPS software/hardware impacting 20% or more of all transactions
+
+2 - A problem that significantly impacts AMC’s ability to do business, either circuit-wide or at a specific theatre.  Examples include:
+
+Issues with sales files
+
+Issues with import of files
+
+Issues with EOD transmit files
+
+Wrong business date
+
+0-50% of Point of Sale Stations and/or Kiosks down
+
+0-50% of ticket printers down
+
+Slow system response
+
+3 - A problem that has limited impact on AMC’s ability to do business.
+
+Priority
+
+1 – Showstopper
+
+2 – Urgent
+
+3 – High
+
+4 – Medium
+
+5 – Low
+
+Discovery Stage / Identified At
+
+Testing
+
+Regression
+
+UAT
+
+Production
