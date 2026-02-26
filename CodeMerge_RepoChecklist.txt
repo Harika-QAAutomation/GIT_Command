@@ -1,0 +1,86 @@
+Merge Checklist:
+A new field has been added to Jira “Merge Complete”.
+
+Default value of ‘Merge Complete’ field = null
+
+Options are ‘Yes’ or ‘No’
+
+Field is only available for type Bug or Story (no longer applies to Sub-task)
+
+Validation: Field must be filled out with yes or no to move the Jira to Done.
+
+If not, below error will show:
+
+
+image-20250122-205926.png
+Please update to Yes when Jira is merged to Epic branch or Prerelease branch
+
+Jira can be closed with Merge Complete = no. (This could happen for a Story which is a script request, or a Story that was just analysis and closed with no code changes.)
+
+Dev to add a comment when this field is updated detailing which branch it’s merged, or why nothing is merged.
+
+ 
+
+Credit Connector: 
+Due to peripheral drivers architecture and other dependencies on Windows bit version. It is recommended to always generate the device service build in x86 architecture and Release mode.  
+
+ 
+
+CrewLink / Kiosk: 
+Clone to empty folder, example  git clone https://github.com/ncr-ps-hospitality/amc-kiosk
+
+Checkout development branch
+
+Create release branch named like BuildRelease-v5.1.4 or Regression-v5.1.4
+
+Increment version and commit locally
+
+If this is for regression push the commit, make a regression build and continue when it makes sense
+
+Make release based commits (if any) to the release branch – if for regression developers should base their changes on the latest commit here.
+
+At this point we are making an actual release, up until this point changes can be committed to the regression/release branch and other changes can go into development branch (such as unrelated finished stories) without conflicting with each other
+
+If a regression build was made be sure to start again with a fresh clone to an empty folder for the release build itself
+
+Checkout master
+
+Merge release branch to master with --no-ff, i.e. git merge BuildRelease-v5.1.4 --no-ff
+
+This ensures we have a merge commit which we need for release builds
+
+Make release build
+
+npm install
+
+Note: there is currently no need to check in changes to package-lock.json or package.json due to calling npm install
+
+grunt buildRelease
+
+File compare all files against most recent build (could be a QA build, could be a regression build, …) - only version and sha should be different. Do a binary/full text comparison of each file to make sure of this. This is an important step as it is the last time to validate that nothing fell through the cracks. I use the tool Beyond Compare for this. You need something that will fully compare the content of all files in all folders, file name/size/timestamp comparing is NOT enough.
+
+Smoke test the build
+
+Tag release like Release-v5.1.3
+
+Delete local release branch
+
+Delete remote release branch (if it exists on the server)
+
+Checkout development
+
+Merge (release tag) to development with --no-ff, i.e. git merge Release-v5.1.3 --no-ff
+
+Push master and development branches
+
+Push tags (command line example: git push origin --tags)
+
+Upload build to the server
+
+Email info about resulting build
+
+Update local dev environment (fetch from server, prune origin remote, optionally integrate the new development branch into current stories, …)
+
+Related content
+
+Send feedback
