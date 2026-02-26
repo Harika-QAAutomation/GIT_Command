@@ -1,0 +1,61 @@
+To continue improving our development quality and reduce internally‑found defects, we’re introducing a small but meaningful new step before a story is moved to “Ready for QA” or “Ready for Done” in Jira. This addition is meant to empower developers, increase confidence in our builds, and ensure we’re consistently delivering well‑tested features to QA. 
+
+Continue Doing
+
+Developers will still be responsible for writing unit test cases, aiming for 100% coverage for new code and covering as much as reasonably possible for legacy areas. This practice remains essential for early detection of defects and long‑term code health.
+
+Ready for QA or Ready for Done?
+
+When developers should move items to “Ready for QA” versus “Ready for Done,” the following guidelines apply:
+
+Business Story / Defect: For any work involving end‑to‑end functional changes, developers must transition the Jira item to “Ready for QA” after completing development and performing their own validation and attaching test cases. This includes (but is not limited to):
+
+Business Stories
+
+SMO items
+
+Defect fixes tied to previous releases
+
+Fixes for features already delivered where we create Jira of type Bug
+
+Bugs identified by QA during regression cycles where we create Jira of type Bug
+
+Technical Story / Task / Sub‑task: For work that is purely technical and does not require end‑to‑end functional testing (e.g., refactoring, configuration updates, backend-only technical tasks, front end only change), developers should transition the item to “Ready for Done” after development is complete and test cases/evidence are attached.
+
+How to generate Manual Test Cases Using Copilot
+
+To supplement unit testing, devs will now also generate manual test cases in the provided Excel format. This helps strengthen our coverage and aligns dev and QA understanding of expected behavior.
+
+You can generate these test cases in two flexible ways—use whichever fits your workflow best:
+
+Before making code changes: Provide Copilot with the files you plan to modify.
+
+After completing code changes: Provide Copilot with the files that were actually modified.
+
+Both paths will give Copilot enough context to produce thorough, scenario‑based test cases.
+
+What to Provide Copilot
+
+When you’re ready to generate test cases, give Copilot the following:
+
+Your user story file (attach or reference with #US-Story.md)
+
+Your changed/new code files (attach or reference with #File1, #File2, etc.)
+
+Your Excel test‑case template (Copilot already understands the template when you upload it)
+
+After attaching your files, simply ask Copilot to generate the test cases. You can use the test‑case prompt provided in the attached file "TestCasePrompt_Modify as needed.txt".
+
+You can attach files by dragging/dropping them directly into Copilot Chat or by referencing them with #filename. This uses Copilot’s built‑in file‑context feature to produce accurate and complete test cases.
+
+Example
+
+I recently used Copilot to create the user story for AMCI-16997: Centralized Pricing - PriceScheme PUT API - Add the foreign key constraint on the Price Scheme Detail Surcharge mapping table to prevent orphan records
+Draft
+  and then generated the corresponding test cases in the Excel file: Testcases-AMCI-NEW-FK-PRICING.xlsx
+
+ 
+
+QA maintain regression test cases on shared path:
+
+\\susalp100\SHARE\Projects\Ent StoreSys\AMC Innovation\_Manual_TestScript
