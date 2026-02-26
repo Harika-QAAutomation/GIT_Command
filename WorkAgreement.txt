@@ -1,0 +1,74 @@
+WORKING AGREEMENT 
+
+Tell the truth, strive to be transparent, be courageous, respect one another, value all team members' thoughts, and commit to each other. 
+
+Hyderabad - be available on Teams/check email/be in office: 11:00AM-7:30PM / make sure local team members know your availability
+
+Atlanta - be available on Teams/check email: 8:00AM-3:00PM / make sure local team members know your availability
+
+Common team time: 8:00am-10:00am E.S.T. (early/after will be case by case)
+
+Please notify local team members if you have to step out for an appointment
+
+Add leave time into the Confluence calendar; keep personal calendars up to date. Create a Free, All Day Outlook invite to the team for leave time 
+
+Contact priority: Teams/Email/Call            
+
+Agile/Scrum
+
+Hold daily scrum at 8:00AM/ 9:00AM U.S. EST with non-attendees communicating with the team ahead of time.
+
+Provide your update to the PO/SM ahead of time if you are unable to attend the stand up. 
+
+Update JIRA storyboard regularly (points, move appropriate, comments, changes and build details)
+
+Reiterate commitment to the team during the daily scrum, using the 3-question format. Everyone has a turn lasting about one minute.
+
+Answer the 3 questions in the daily scrum: What did you work on? What are you going to work on next? Any impediments?
+
+Validate stories up front (design meeting) as a team, if needed
+
+Hold Story Grooming sessions on Mondays.
+
+Stories/Backlog
+
+Try to complete the committed stories within a sprint before pulling any new story mid-sprint
+
+Refine the backlog weekly to ensure stories can be pulled into a sprint.
+
+PO owns product backlog and maintains its health through constant PBI re-ordering
+
+Work on increasing the unit test case coverage
+
+Conduct code reviews for non-paired coding, before it is ready for QA.
+
+Each story/ defect should have the modifications, areas affected, test cases in the approved template attached before marking the Jira item as Done.
+
+Communication Plan
+
+Team to communicate any impediments.
+
+Demo each completed story/ defect during sprint review once QA is done. Dev demos during sprint review if the story is not yet passed QA, but is demoable.
+
+
+Be prepared to demo as and when a story is ready for demo (Dev/ QA)
+
+Release Checklist
+
+Regression testing complete
+
+Identify release candidate
+
+Team to work with Divya on Release Notes
+
+Update Modifications and Areas affected for each story.
+
+Update API Documentation, where applicable
+
+Provide test exit summary
+
+QM5 Release Notification (Package number and test exit summary)
+
+Consolidate regression/ DITL scripts
+
+Identify known issues
