@@ -1,0 +1,110 @@
+KIOSK COMPONENTS
+
+CODING BEST PRACTICES – KIOSK/NCM/ESERVER ETC.,
+
+GITHUB BEST PRACTICES
+
+CODE REVIEW
+
+Crewlink/Kiosk Components
+
+Kiosk coding best practices
+Indentation
+
+- Always helps with readability of code by others and easy to identify what the code says etc.,
+
+Naming variables and function, easy, short and readable, camel case.
+
+EsLint warnings/errors
+
+- use === instead of == (and !==) , are strict equality operators when comparing.
+
+-Always end statement with semicolon(;)
+
+-Just be careful with React hook EsLint warnings
+
+Consider using let and const
+
+Use Template Literals [backtick character (`)].
+
+Logging appropriately where needed.
+
+When editing existing piece of code, please make sure you understand what it does and where it impacts etc., so that existing functionality is intact.
+
+Proper comments for the code as needed to explain what it does
+
+Any code that is not needed OR obsolete , please delete those code lines.
+
+Do not commit packagelock.json to the repo. If package.json needs any edit’s please talk to any senior devs before editing.
+
+NCM/Eserver Coding best practices
+All the unit test cases needs to pass and any new functionality added, needs new test cases for the same.
+
+Document the XML/Fixed packet modifications available in SharePoint.
+
+Indentation
+
+- Always helps with readability of code by others and easy to identify what the code says etc.,
+
+Naming variables and function, easy, short and readable, camel case.
+
+Logging appropriately where needed.
+
+When editing existing piece of code, please make sure you understand what it does and where it impacts etc., so that existing functionality is intact.
+
+While working on any story where we have to create new folder think through the access issues from all user perspective and add appropriate code to make sure it works as expected for pos user as well as admin(Windows login user)
+
+Proper comments for the code as needed to explain what it does
+
+Any code that is not needed OR obsolete , please delete the code lines.
+
+Code Review
+Code review improves code quality and ensures consistent standards. 
+
+Team 1 is following code review process and team2 will follow up.
+
+Follow process for code review.
+
+Only after Code review is done, move the story to Ready for QA and do a QA build.
+
+Github best practices
+Make sure to spin-off your story branch from a parent/pre-release branch correctly.
+
+Use Jira number as your branch name(AMCI-12345), using a brief purpose of the story is OK too J
+
+At least once a day from Git extensions do “Fetch and prune all” and then “Pull merge”, so you have the latest updates from GitHub.
+
+Always back merge parent/pre-release branch from time to time when working on your story so to avoid merge conflicts later.
+
+When ready to make QA builds, always back merge parent/pre-release branch and do a build, so QA testing is clean and complete, also to catch any issues early.
+
+When the story is done and Ready for QA, please add appropriate comments in Modifications & Areas Affected fields.
+
+When QA is complete and moved to Ready for Done, merge your story branch to appropriate parent/pre-release branch. Jira will say which fix release version it belongs,if not ask .
+
+Add a comment that story is merged. And also mention any unit test cases and/or Dev notes.
+
+Once merge is complete, verify your updates exists in parent/pre-release branch and delete your story branch from remote repo (be extra careful here)??
+
+Make sure to increment build numbers when providing the Release builds.
+
+Keep committing your code as often as possible so if something happens to your VM/laptop, you don’t lose your work!
+
+When in doubt please ask.
+
+KT recording of this session is available here:
+\\susalp100\share\Projects\Ent StoreSys\AMC Innovation\KnowledgeSessions\(Kiosk_NCM_EServer etc.,_GitHub)-20220818_093626-Meeting Recording.mp4
+
+Other resources for coding standards  
+
+CleanCode_CheatSheetV2.4.pdf
+30 Sep 2024, 06:32 AM
+
+AvSol Coding Guidelines for CSharp 3.0-5.0 Cheat Sheet.pdf
+30 Sep 2024, 06:32 AM
+
+javascript_best_coding_practices.pdf
+30 Sep 2024, 06:33 AM
+Related content
+
+Send feedback
