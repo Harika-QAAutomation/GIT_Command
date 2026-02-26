@@ -1,0 +1,109 @@
+image-20250808-152702.png
+Jira - Project Management:
+Create new Epic/Parent for each project in Jira.
+
+Do not give story points to Epics/Parent.
+
+All stories, sub task and defects should be linked directly or indirectly to project epic.
+
+Summary should start with prefix / keyword to differentiate between various types of stories and bugs.
+
+Prefix list for feature/stories:
+
+“Business - ”: User story received from AMC. All modification and changes through the course of project should be recorded within these Jira.
+
+“Dev - ”: Break down business stories into smaller stories and associate them to respective Business story.
+
+“Spike - ”: All research / analysis stories should have this prefix and should be linked to Business story.
+
+“CR: Defect # - “: Defects which are agreed to be treated as enhancement. All other defects are created as Jira Issue type “Bug”.
+
+“Support Ticket - “: For production issues after 90 days of release. Before 90 days all issues reported in production are generally created as Jira Issue type “Bug”.
+
+Prefix list for bugs:
+
+"BUG - " if it is identified by NCR QA
+
+"Defect - " if it is identified by AMC QA
+
+"Support Ticket - " if it is identified in production before 90 days of release.
+
+Add business stories received from AMC as Jira type “feature”. Do not give story points to business stories. Use business stories as test only integration stories.
+
+Breakdown business stories to smaller manageable chunk of work as Jira type story with prefix “Dev –“. Give story points to these stories.
+
+Always add any change / deviation from AC in User Story (Business story) with date at the end of description section in Jira.
+
+Record standup discussion.
+
+Demo Feedback.
+
+Change in AC due to defect.
+
+Change in AC due to technical challenge.
+
+New scenario identified.
+
+All test cases created for should be attached to Business stories.
+
+Before updating the status of Jira to “DONE”, make sure all applicable fields are updated with relevant information.
+
+ 
+
+Jira - Defect Management:
+All defects identified during feature / story testing will be logged as subtasks.
+
+All defects identified after code freeze for a release (during Functional or Regression Testing) will be logged as Jira Issue type “Bug”.
+
+All defects should have following details:
+
+Associate the defects with Jira type “Bug” to respective story.
+
+Should list build version and environment (Hardware / VM / Simulator) details.
+
+Should have steps to reproduce it with screenshots where feasible.
+
+Should have priority, severity, discovery stage, reproducible (if it can be reproduced consistently), reopened (if the issue persists after dev fix).
+
+If the defect is found from test scenario scripted in user story, then add a comment regarding the same. We do not need to create a duplicate test case for the defect. If this test scenario was not documented before, then go back to the parent story, update the test case, and add comment to the Jira regarding test case updated in parent story and defect. Make sure “AMC Test Case Review” field is updated to “Ready to Review” for parent story.
+
+This will help to consolidate test cases, make it easier to add them to DITL and automation. It will also help in test case review.
+
+Dev should add in Modifications, Area Affected and RCA, before any defect can be closed.
+
+ 
+
+Jira – Test Case Review:
+We need to update this field for all types of Jira to be able to close them.
+
+Test Case Review Metrics: 
+Two Dimensional Filter Statistics - Test Case Review
+ 
+
+Dropdown values and their meaning:
+
+“Not Started”: Jira is in progress, once testing is done it will be moved to Ready to Review.
+
+“Skipped”: Jira does not need testing or test cases already exists in parent story.
+
+“Ready To Review”: Jira has test cases attached and is waiting for AMC review.
+
+“Update Needed”: AMC QA has recommended some changes to test cases or suggested some additional scenarios. 
+
+“Done”: NCR QA has attached test cases, AMC QA reviewed it, and no further changes needed.
+
+We need to attach test cases to each Jira type “Story” before code freeze.
+
+AMC needs to review all Jira in a release before finishing their testing on DEV builds.
+
+Need to review business stories to make sure test cases are attached otherwise escalate.
+
+Need to review test cases attached to Jira, share feedback and update “AMC Test Case Review” field.
+
+NCR to share Test Strategy document with Release Milestone dates.
+
+AMC to start reviewing the test cases for the release once they receive this email and would need to finish review before completing DEV Build testing.
+
+QA to monitor this dashboard to make sure test cases are up to date.
+
+All Jira should have “AMC Test Case Review” field in either “Skipped” or “Done” status.
