@@ -1,0 +1,79 @@
+Merge flow:
+
+QM5 Release: Feature Branch → Epic Branch → Development Branch → Master Branch
+
+Patch Release: Feature Branch → Patch Release Branch
+
+Post release patch release changes (cherry pick) should be merged into all Epic / Development branches.
+
+Versioning tips:
+
+Release Version 7.7.X.X 
+
+Dev / QA Version 7.71.X.X
+
+Always increment build version for any new build.
+
+Never use release version for story testing or regression testing. Release version should only be used for smoke testing from master branch or final build from patch release branch. 
+
+Avoid 7, 8, 9 in X, last part of version number. Build will fail with those release version number.
+
+NEVER merge directly into Epic / Development / Patch release branches. Create feature branches and use them to merge changes. 
+
+NEVER reuse the patch release branch for subsequent patch releases. ALWAYS create new patch release branch.
+
+Add TAGS once release build is ready for easier release management specially for patch releases.
+
+Branch name and comments should always have story number associated with the change. 
+
+Branch name example: AMCI-11011_CamelCaseSmallDescription
+
+Epic Branch name example: AMCI-11246_ZoneGatedSeatingEpic / Epic_AMCI-11246_ZoneGatedSeating
+
+Comment: Story Number SPACE Description of explain what and why you have done something
+
+AMCI-11011  Why the changes were done  
+
+Write meaningful commit messages
+
+Rebase your feature branch often with Epic / Development branch
+
+While git-rebase is a useful feature, it should only be used on branches that only you are working with.
+
+This means executing the following steps regularly:
+
+git checkout epic
+git pull
+git checkout feature-xyz  # name of your hypothetical feature branch
+git rebase epic # may need to fix merge conflicts in feature-xyz
+
+These steps rewrite history in your feature branch (and that's not a bad thing). First, it makes your feature branch look like epic with all the updates made to epic up to that point. Then all your commits to the feature branch are replayed on top, so they appear sequentially in the Git log. You may get merge conflicts that you'll need to resolve along the way, which can be a challenge. However, this is the best point to deal with merge conflicts because it only impacts your feature branch.
+
+After you fix any conflicts and perform regression testing, if you're ready to merge your feature back into epic, do the above rebase steps one more time, then perform the merge:
+
+git checkout epic
+git pull
+git merge feature-xyz
+
+Squash commits before merging
+
+When working on your feature branch, it's fine to add a commit for even minor changes. However, if every feature branch produced 50 commits, the resulting number of commits in the epic branch could grow unnecessarily large as features are added. In general, there should only be one or a few commits added to epic from each feature branch. To achieve this, squash multiple commits into one or a handful of commits with more elaborate messages for each one. This is typically done using a command such as:
+
+git rebase -i HEAD~20  # look at up to 20 commits to consider squashing
+
+When this is executed, an editor pops up with a list of commits that you can act upon in several ways, including pick or squash. Picking a commit means keeping that commit message. Squashing implies combining that commit's message into the previous commit. Using these and other options, you can combine commit messages into one and do some editing and cleanup. It's also an opportunity to get rid of the commit messages that aren't important (e.g., a commit message about fixing a typo).
+
+In summary, keep all the actions associated with the commits, but combine and edit the associated message text for improved clarity before merging into epic. Don't inadvertently drop a commit during the rebase process.
+
+After performing such a rebase, I like to look at the git log one last time to make final edits:
+
+git commit --amend
+
+Finally, forcing an update to your remote feature branch is necessary, since the Git commit history for the branch has been rewritten:
+
+git push -f
+
+
+Delete branches as soon as associated story is marked done and code changes has been merged into Epic / Development branch. 
+
+Always create a new merge commit and check "Do not commit" so that merge changes can be verified before pushing the changes.
