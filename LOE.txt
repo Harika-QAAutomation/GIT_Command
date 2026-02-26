@@ -1,0 +1,31 @@
+ Below is a T-shirt size to sprint conversion chart that is agreed upon with AMC. 
+
+T Shirt Size
+
+Extra Small (.5 Sprint)
+
+Small (.5 to 2 Sprints)
+
+Medium (2 - 4 Sprints)
+
+Large (4 - 6 Sprints)
+
+Extra Large (6 - 10+ Sprints)
+
+ 
+
+ 
+
+Story Points for Stories
+
+1 - half day
+
+2 - 1 day
+
+3 - 2 to 3 days (complexity matters)
+
+5 - 3 to 5 days (complexity matters)
+
+8 - Full sprint
+
+ 
